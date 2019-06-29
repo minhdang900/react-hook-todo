@@ -1,20 +1,18 @@
 {
-  "name": "reacthookstodolist",
+  "name": "react-hook-todo-app",
   "version": "1.0.0",
-  "description": null,
-  "keywords": [
-    "javascript",
-    "react hooks",
-    "reactjs"
-  ],
+  "description": "",
+  "keywords": [],
   "main": "src/index.js",
   "dependencies": {
-    "node-sass": "^4.12.0",
-    "react": "16.7.0-alpha.2",
-    "react-dom": "16.7.0-alpha.2",
-    "react-scripts": "2.1.1"
+    "node-sass": "4.12.0",
+    "react": "16.8.6",
+    "react-dom": "16.8.6",
+    "react-scripts": "3.0.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "typescript": "3.3.3"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

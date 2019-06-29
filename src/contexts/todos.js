@@ -1,7 +1,7 @@
-import React, { useReducer, createContext, useContext } from "react";
+import React, { useReducer, createContext, useContext, useEffect} from "react";
 import toDoReducer from "./../reducers/todos";
 import { VisibilityFilters } from "./../constant";
-import {storeReducer, useStoreContext} from "../store";
+import {useStoreContext} from "../store";
 
 
 const initialState = {
@@ -14,10 +14,8 @@ function TodoContextProvider(props) {
   // create a global store to store the state
   const globalStore = useStoreContext(useContext(TodoContext), "state");
   // `todos` will be a state manager to manage state.
-  const [state, dispatch] = storeReducer(
-    useReducer(toDoReducer, globalStore),
-    "state" // The localStorage key
-  );
+  const [state, dispatch] = useReducer(toDoReducer, globalStore);
+  useEffect(() => localStorage.setItem("state", JSON.stringify(state)), [state]);
   const value = { state, dispatch };
 
   return (
