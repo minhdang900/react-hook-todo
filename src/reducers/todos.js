@@ -1,7 +1,10 @@
-import { CHANGE_FILTER, TOGGLE_TODO, TOGGLE_ALL_TODO, ADD_TODO, DELETE_TODO, VisibilityFilters } from "./../constant";
+import { CHANGE_FILTER, TOGGLE_TODO, TOGGLE_ALL_TODO, ADD_TODO, DELETE_TODO, LOAD_TODO, VisibilityFilters } from "./../constant";
 
 const toDoReducer = (state, { type, payload }) => {
   switch (type) {
+    case LOAD_TODO:
+      return {...payload }
+      
     case CHANGE_FILTER:
       return { ...state, filter: payload };
 
